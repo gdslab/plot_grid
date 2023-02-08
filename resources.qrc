@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/plot_grid" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
