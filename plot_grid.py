@@ -27,7 +27,7 @@ from qgis.PyQt.QtWidgets import QAction, QFileDialog
 from qgis.core import QgsProject, QgsVectorLayer, QgsFillSymbol, QgsMessageLog, QgsSingleSymbolRenderer
 
 # Initialize Qt resources from file resources.py
-from .resources import *
+from . import resources  # noqa: F401
 
 # Import the code for the dialog
 from .plot_grid_dialog import PlotGridDialog
@@ -371,7 +371,7 @@ class PlotGrid:
 
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-        if self.first_start == True:
+        if self.first_start:
             self.first_start = False
             self.dlg = PlotGridDialog()
             self.dlg.pushButton_output.clicked.connect(self.select_output_file)
@@ -387,7 +387,7 @@ class PlotGrid:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
