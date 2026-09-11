@@ -6,7 +6,7 @@
 name=Plot grid tool
 qgisMinimumVersion=3.0
 description=This plugin create a grid file from a plot boundary file
-version=0.1
+version=0.2
 author=Jinha Jung
 email=jinha@purdue.edu
 
